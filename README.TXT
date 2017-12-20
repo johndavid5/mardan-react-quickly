@@ -10,9 +10,8 @@ and http://reactquickly.co.
 If you need up-to-date information, most likely you’ll find it there.
 
 The source code is available on the Manning website
-(www.manning.com/books/react-quickly)
+  www.manning.com/books/react-quickly
 and on GitHub:
-
-https://github.com/azat-co/react-quickly
+  https://github.com/azat-co/react-quickly
 
 
