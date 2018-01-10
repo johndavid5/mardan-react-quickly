@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Hello, React!</title>
+	<script src="js/react.15.2.1.js"></script>
+	<script src="js/react-dom.15.2.1.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+	<script type="text/javascript">
+    let myHeading1 = React.createElement('h1', {style: {color: 'purple'}}, 'Hello, Purple!'); 
+    let myHeadingOther1 = React.createElement('h1', {style: {color: 'orange'}}, 'Hello, Orange!'); 
+
+    ReactDOM.render(
+      React.createElement('div', null, myHeading1, myHeadingOther1, myHeading1),
+      document.getElementById('content')
+    )
+	</script>
+    <h2 style="color: green; font-family: courier;">Let off some steam, Bennett</h2>
+  </body>
+</html>
+
