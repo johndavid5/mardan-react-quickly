@@ -9,7 +9,8 @@
     "build-logger": "./node_modules/.bin/babel logger/jsx -d logger/js -w",
     "build-note": "./node_modules/.bin/babel note/jsx -d note/js -w",
     "build-users": "./node_modules/.bin/babel users/jsx -d users/js -w",
-    "build": "npm run build-did-mount & npm run build-logger & npm run build-note & npm run build-users"
+    "build-fun": "./node_modules/.bin/babel fun/jsx -d fun/js -w",
+    "build": "npm run build-did-mount & npm run build-logger & npm run build-note & npm run build-users & npm run build-fun"
   },
   "keywords": [
     "react.js"
