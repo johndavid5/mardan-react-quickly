@@ -1,3 +1,7 @@
+/**
+* Can be a useful 'mixin' class if
+* you wish to observe lifecycle events...
+*/
 class Logger extends React.Component {
   constructor(props) {
     super(props)
@@ -34,7 +38,7 @@ class Logger extends React.Component {
     console.log('componentWillUnmount()...')
   }
   render() {
-    // console.log('rendering... Display')
+    console.log('rendering... Display')
     return (
       <div style={{backgroundColor: 'black', color: 'green', fontFamily: 'courier', fontWeight: 'bold', fontSize: '200%', display: 'inline-block', padding: '10px 12px 10px 10px'}}>{this.props.time}</div>
     )
