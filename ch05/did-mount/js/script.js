@@ -1,3 +1,5 @@
+'use strict';
+
 ReactDOM.render(React.createElement(
   'div',
   null,
