@@ -10,8 +10,10 @@ class Content extends React.Component {
   }
   render() {
     return <div>
+      <label for="joe">Uncontrolled Element (Controversial...may become a React antipattern...):</label>
       <input
         type="text"
+        id="joe"
         onChange={this.handleChange}
         placeholder="Eloquent TypeScript: Myth or Reality" />
       <br/>

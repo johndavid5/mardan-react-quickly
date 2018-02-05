@@ -43,7 +43,7 @@ class FunReactElement extends React.Component {
 				null,
 				"The proper way to do an editable react field...one-way binding via onChange()..."
 			),
-			React.createElement("input", { type: "text", name: "title", value: this.state.title, onChange: this.handleChange.bind(this) }),
+			React.createElement("input", { type: "text", name: "title", placeholder: "Title:", value: this.state.title, onChange: this.handleChange.bind(this) }),
 			React.createElement(
 				"h2",
 				{ style: { color: 'green', fontFamily: 'courier' } },

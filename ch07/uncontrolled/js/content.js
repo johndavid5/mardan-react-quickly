@@ -12,8 +12,14 @@ class Content extends React.Component {
     return React.createElement(
       "div",
       null,
+      React.createElement(
+        "label",
+        { "for": "joe" },
+        "Uncontrolled Element (Controversial...may become a React antipattern...):"
+      ),
       React.createElement("input", {
         type: "text",
+        id: "joe",
         onChange: this.handleChange,
         placeholder: "Eloquent TypeScript: Myth or Reality" }),
       React.createElement("br", null),

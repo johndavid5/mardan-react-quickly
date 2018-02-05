@@ -1,4 +1,4 @@
-Personal plunkings from...
+Personal plunkings and pastings from...
 
 Azat Mardan.
 React Quickly: Painless web apps with React, JSX, Redux, and GraphQL
@@ -14,4 +14,8 @@ The source code is available on the Manning website
 and on GitHub:
   https://github.com/azat-co/react-quickly
 
-
+----------
+REFERENCE:
+----------
+Fetch API:
+  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch

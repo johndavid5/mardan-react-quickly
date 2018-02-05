@@ -22,7 +22,7 @@ class FunReactElement extends React.Component {
 		<h4>The proper way to do a read-only field:</h4>
 		<input type="text" name="title" readOnly={true} value={this.DEFAULT_TITLE} />
 		<h4>The proper way to do an editable react field...one-way binding via onChange()...</h4>
-		<input type="text" name="title" value={this.state.title} onChange={this.handleChange.bind(this)}/>
+		<input type="text" name="title" placeholder="Title:" value={this.state.title} onChange={this.handleChange.bind(this)}/>
 		<h2 style={{color: 'green', fontFamily: 'courier'}}>Let off some steam, Bennett!</h2>
 		</div>
 		);
