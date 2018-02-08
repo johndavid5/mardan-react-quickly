@@ -1,5 +1,6 @@
 *~
 *.swp
 *.out
+*.log
 node_modules
 status.txt

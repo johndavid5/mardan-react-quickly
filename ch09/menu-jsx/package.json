@@ -1,0 +1,19 @@
+{
+  "name": "menu-jsx",
+  "version": "1.0.0",
+  "description": "The Cure for Without-JSX Masochism",
+  "main": "script.js",
+  "scripts": {
+	"build": "./node_modules/.bin/babel script.jsx -o script.js -w"
+  },
+  "author": "Azat Mardan and John D. Aynedjian",
+  "license": "MIT",
+  "babel": {	
+    "presets": ["react"]
+  },
+  "devDependencies": {
+	"babel-cli": "6.9.0",
+	"babel-preset-react": "6.5.0"
+  },
+  "keywords": ["Let", "off", "some", "steam", ",", "Bennett", "!"]
+}
