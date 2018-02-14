@@ -5,15 +5,16 @@ class Content extends React.Component {
 
   constructor(props) {    
     super(props)
-    this.submit = this.submit.bind(this)
+    this.fauxSubmit = this.fauxSubmit.bind(this)
     this.prompt = 'Please enter your email to win $1,000,000.'
   }
 
-  submit(event) {
+  fauxSubmit(event) {
+	let sWho = "fauxSubmit";
     let emailAddress = this.refs.emailAddress
     let comments = this.refs.comments
-    console.log(ReactDOM.findDOMNode(emailAddress).value)
-    console.log(ReactDOM.findDOMNode(comments).value)
+    console.log(`${sWho}(): this.refs.emailAddress.value = '${ReactDOM.findDOMNode(emailAddress).value}'...`)
+    console.log(`${sWho}(): this.refs.comments.value = '${ReactDOM.findDOMNode(comments).value}'...`)
   }
 
   render() {
@@ -24,10 +25,10 @@ class Content extends React.Component {
           Email: <input ref="emailAddress" className="form-control" type="text" placeholder="hi@azat.co"/>
         </div>
         <div className="form-group">
-          Comments: <textarea ref="comments" className="form-control"  placeholder="I like your website!"/>
+          Commentaires: <textarea ref="comments" className="form-control"  placeholder="I like your website!"/>
         </div>
         <div className="form-group">
-          <a className="btn btn-primary" value="Submit" onClick={this.submit}>Submit</a>
+          <a className="btn btn-primary" value="Submit" onClick={this.fauxSubmit}>Submit</a>
         </div>
       </div>
     )
