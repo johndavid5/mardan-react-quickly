@@ -1,35 +1,29 @@
 // Main app entry point...
-const React = require('react'); 
+const React = require('react');
 const { render } = require('react-dom');
+
+// Provider component--use at top level to inject
+// data from the store into components...thus all
+// children will have the store...
 const { Provider } = require('react-redux');
+
+// Use createStore() function that will take reducers
+// and return the Store object...
 const { createStore } = require('react-redux');
-// Imports (combined) reducers from ./modules
-// (./modules/index.js)...
+
+// Our reducers...enumerated in ./modules/index.js
+// via the plug-in Node pattern...also known as
+// splitting reducers...
 const reducers = require('./modules');
+
+// Our routes enumerated in ./routes.js...
 const routes = require('./routes');
 
-// Use react-dom's render() to render
-// Provider component
-// and its entire subtree of components...
-// It takes the first argument and mounts
-// it into the second argument... 
-//
-// Hierarchy of components needs the
-// `Provider` component at the top
-// level...it injects data from the
-// store into all child components...
-//
-// Define Provider by passing a Store
-// instance (with reducers)...
-//
-// The Provider component takes care of
-// delivering data from the store to all
-// the connected components, so there's no
-// need to pass properties directly.  But
-// a few parts are missing, such as routes,
-// reducers, and actions...
+// Render Provider component and subtree via
+// react-dom's render()...
 module.exports = render((
 	<Provider store={createStore(reducers)}>
 		{routes}
 	</Provider>
-), document.getElementById('app'))
+), document.getElementById('app')
+);
