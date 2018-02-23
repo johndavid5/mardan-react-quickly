@@ -3,4 +3,5 @@
 *.out
 *.log
 node_modules
+build
 status.txt

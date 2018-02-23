@@ -9,7 +9,7 @@ const { Provider } = require('react-redux');
 
 // Use createStore() function that will take reducers
 // and return the Store object...
-const { createStore } = require('react-redux');
+const { createStore } = require('redux');
 
 // Our reducers...enumerated in ./modules/index.js
 // via the plug-in Node pattern...also known as

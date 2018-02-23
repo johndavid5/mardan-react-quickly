@@ -6,6 +6,10 @@
 // cherry-picked by action type.
 const { handleActions } = require('redux-actions');
 
+// It's common to name actions using uppercase letters
+// preceded by the module name in lowercase letters.
+// You can omit the module name if you're sure duplicates
+// will never occur.
 const FETCH_MOVIES = 'movies/FETCH_MOVIES';
 const FETCH_MOVIE = 'movies/FETCH_MOVIE';
 
@@ -16,19 +20,36 @@ const initialState = {
 
 module.exports = {
 
-	// Defines the FETCH_MOVIES action creator
-	// that returns an action object...
 	//
-	// An action is a plain old JavaScript
-	// object with a required `type` property
-	// plus any other properties (e.g., data
-	// fetched via the fetch API) that are needed...
+	// * To change data in the store, you use actions.
+	//
+	// * To clarify, an action can be anything, not just
+	//   user input in a browser.
+	//
+	// * Actions are the only sources of information
+	//   for the store; this data is sent from an app
+	//   to the store.
+	//
+	// * Actions are executed via `store.dispatch()`
+	//   or via a `connect()` helper.
+	//
+	// * Every action is represented by a plain old
+	//   JavaScript object that has at least one property:
+	//   type.  It can have as many other properties as you
+	//   want, usually to pass data into the store.
+	//	
+
+	/** Defines the FETCH_MOVIES action creator
+	*   that returns an action object...
+	*/
 	fetchMoviesActionCreator: (movies) => ({
 		type: FETCH_MOVIES,
 		movies
 	}),
-	// Defines the FETCH_MOVIE action creator
-	// that returns an action object...
+
+	/** Defines the FETCH_MOVIE action creator
+	* that returns an action object...
+	*/
 	fetchMovieActionCreator: (index) => ({
 		type: FETCH_MOVIE,
 		index	
@@ -48,6 +69,6 @@ module.exports = {
 			// for movie ID)...
 			current: state.all[action.index-1]
 		})
-	}, intitialState );
+	}, initialState ),
 	
 };
