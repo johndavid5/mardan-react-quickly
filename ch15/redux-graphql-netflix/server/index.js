@@ -4,10 +4,17 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema');
 
+const sWho = "index.js";
+
+console.log(`${sWho}: process.env = `, process.env );
+// Use ES6 destructuring assignments...
 const {
 	PORT = 3000,
 	PWD = __dirname
 } = process.env;
+
+console.log(`${sWho}: PORT = ${PORT}...`);
+console.log(`${sWho}: PWD = ${PWD}...`);
 
 const app = express();
 
@@ -56,6 +63,6 @@ app.use('*', (req, res)=>{
 // Use PORT environmental variable,
 // e.g.,
 // $ PORT=3000 node ./build/server.js
-app.listen(PORT,
-()=>console.log(`Running server on port ${PORT}`)
+app.listen(PORT, ()=>
+	console.log(`Running server on port ${PORT}, Escamillo...`)
 );
