@@ -12,6 +12,12 @@ const {
 	PORT = 3000,
 	PWD = __dirname
 } = process.env;
+// Can pass port like this (at least in *nix,
+// in Windows probably hafta set the environment
+// variable the old-fashioned way):
+// PORT=3000 node ./build/server.js
+// Of course, you can always pass PORT
+// via command-line arguments, Escamillo...
 
 console.log(`${sWho}: PORT = ${PORT}...`);
 console.log(`${sWho}: PWD = ${PWD}...`);
@@ -22,7 +28,8 @@ const app = express();
 // will serve all kinds of data
 app.use('/q', 
 	graphqlHTTP( req => ({
-		schema,
+		// schema, // point to ./server/schema.js
+		schema: schema, // point to ./server/schema.js
 		context: req.session }) )
 );
 
@@ -33,13 +40,22 @@ app.use('/q',
 //	res.sendFile( req.params.file, {
 //		root: path.resolve(PWD, 'build', 'public')
 //	});
-});
+//});
 
-// ...or just serve up static files the easy
+// ...or serve up static files the easy
 // way via express.static()...
 app.use('/dist',
 	express.static(path.resolve(PWD, 'build', 'public'))
 );
+
+// Anti-pattern: expose your entire directory
+// tree -- including back-end code such as server.js
+// because you used ./build rather than
+// ./build/public as your base subfolder...
+//
+// app.use('/dist',
+//	express.static(path.resolve(PWD, 'build'))
+//);
 
 
 
@@ -47,7 +63,8 @@ app.use('/dist',
 // requests that aren't for /dist/* URL's...
 //
 // It's important to serve up index.html
-// for _every_ route except the API endpoint
+// for _every_ route -- hence we use the
+// '*' wildcard -- except the API endpoint
 // and bundle files because when you use the
 // HTML5 History API and go to a location using
 // a hash-less URL like /movies/8, refreshing

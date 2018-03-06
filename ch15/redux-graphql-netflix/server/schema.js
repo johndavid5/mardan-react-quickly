@@ -9,6 +9,8 @@ const {
 
 const movies = require('./movies/json');
 
+// Sets the name of the object to "movie"
+// so you can use it in two queries...
 const movie = new GraphQLObjectType({
 	name: 'Movie',
 	fields: {
@@ -42,6 +44,7 @@ module.exports = new GraphQLSchema({
 		name: 'Query',
 		fields: {
 			movies: {
+				// Send back the entire array of moiew...
 				type: new GraphQLList(movie),
 				resolve: () => movies
 			},
@@ -52,7 +55,15 @@ module.exports = new GraphQLSchema({
 						type: GraphQLInt
 					}
 				},
-				// Destructuring assignment to create variable index = POJO.index
+				// Send back only a single movie using
+				// the index (from the URL parameter)
+				//
+				// Defines the getter for this query, which will
+				// send data from a JSON file...
+				// When the query is performed, the function assigned
+				// to the `resolve` key is executed...
+				// (Destructuring assignment to create variable
+				// index = POJO.index...)
 				resolve: ( r, {index}) => movies[index-1]
 			}
 		}
