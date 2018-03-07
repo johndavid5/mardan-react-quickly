@@ -2,7 +2,10 @@ const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const axios = require('axios'); // alternative to fetch API...
-const clean = require('clean-tagged-string').default; // magically one-liners your multi-line graphql queries...
+
+// magically one-liner's your multi-line graphql queries...
+const clean = require('clean-tagged-string').default; 
+
 const {
   fetchMovieActionCreator
 } = require('modules/movies.js')
