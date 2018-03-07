@@ -36,7 +36,7 @@ class Movie extends React.Component {
       }`
 
 
-      axios.get('/q?query=${query}`).then(response => {
+      axios.get(`/q?query=${query}`).then(response => {
 		this.props.fetchMovie(response);
       })
 

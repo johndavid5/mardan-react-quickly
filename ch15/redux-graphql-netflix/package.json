@@ -4,7 +4,11 @@
   "description": "A sample project in React, GraphQL, Express and Redux that copies Netflix's features and workflow",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"webpack --watch --config webpack.config.js\" \"webpack --watch --config webpack.server.config.js\" \"webpack-dev-server\" \"nodemon ./build/server.js\""
+    "start": "concurrently \"webpack --watch --config webpack.config.js\" \"webpack --watch --config webpack.server.config.js\" \"webpack-dev-server\" \"nodemon ./build/server.js\"",
+    "watch": "webpack --watch --config webpack.config.js",
+    "watch-server": "webpack --watch --config webpack.server.config.js",
+    "dev-server": "webpack-dev-server",
+    "server": "nodemon ./build/server.js"
   },
   "repository": {
     "type": "git",

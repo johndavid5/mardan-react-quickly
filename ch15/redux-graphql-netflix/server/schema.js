@@ -7,7 +7,7 @@ const {
 	GraphQLFloat
 } = require('graphql');
 
-const movies = require('./movies/json');
+const movies = require('./movies.json');
 
 // Sets the name of the object to "movie"
 // so you can use it in two queries...
@@ -18,7 +18,7 @@ const movie = new GraphQLObjectType({
 			type: GraphQLString
 		},
 		cover: {
-			type: GraphQLStirng
+			type: GraphQLString
 		},
 		year: {
 			type: GraphQLString
