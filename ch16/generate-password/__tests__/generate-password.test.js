@@ -1,3 +1,6 @@
+// Turn off auto-mock...should be turned
+// off by default in newer versions 
+// of Jest, but what the heck...
 // "Ah-hahh...this kid's a real mock..."
 jest.dontMock('../generate-password.js');
 
