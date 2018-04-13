@@ -1,29 +1,38 @@
-// Main app entry point...
-const React = require('react');
-const { render } = require('react-dom');
+// Entry point of the application...
+const React = require('react')
+// To render the Provider component and its
+// entire subtree of components, you use
+// react-dom's `render()`.  It takes the first
+// argument <Provider> and mounts it into
+// the element you pass as the second argument
+// document.getElementById('app')
+const { render } = require('react-dom')
+// To make redux work, the hierarchy of components
+// needs the Provider component at the top level.
+// This component comes from the `react-redux` package
+// and injects data from the store into the components.
+// Using Provider as the top-level component means
+// all children will have the store.  Neat.
+// The Provder component takes care of delivering
+// data from the store to all the connected
+// components, so there's no need to pass
+// properties directly. 
+const { Provider } = require('react-redux')
+// To make Provider work, you need to provide
+// the store to its `store` property.  The
+// Store is an object that represents the application
+// state.  Redux (react-redux) comes with a
+// `createStore()` function that takes 
+// reducer(s) from ./ch14/redux-netflix/src/modules/index.js
+// and returns the Store object.
+const { createStore } = require('redux')
+const reducers = require('./modules')
+const routes = require('./routes.js')
 
-// Provider component--use at top level to inject
-// data from the store into components...thus all
-// children will have the store...
-const { Provider } = require('react-redux');
-
-// Use createStore() function that will take reducers
-// and return the Store object...
-const { createStore } = require('redux');
-
-// Our reducers...enumerated in ./modules/index.js
-// via the plug-in Node pattern...also known as
-// splitting reducers...
-const reducers = require('./modules');
-
-// Our routes enumerated in ./routes.js...
-const routes = require('./routes');
-
-// Render Provider component and subtree via
-// react-dom's render()...
+// You define `Provider` by passing a `Store`
+// instance (with reducers) in a JSX format.
 module.exports = render((
-	<Provider store={createStore(reducers)}>
-		{routes}
-	</Provider>
-), document.getElementById('app')
-);
+  <Provider store={createStore(reducers)}>
+    {routes}
+  </Provider>
+), document.getElementById('app'))
