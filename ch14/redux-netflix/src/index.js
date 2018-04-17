@@ -12,8 +12,8 @@ const { render } = require('react-dom')
 // This component comes from the `react-redux` package
 // and injects data from the store into the components.
 // Using Provider as the top-level component means
-// all children will have the store.  Neat.
-// The Provder component takes care of delivering
+// all children will have the store.  (Neat.)
+// => The Provider component takes care of delivering
 // data from the store to all the connected
 // components, so there's no need to pass
 // properties directly. 
@@ -26,6 +26,8 @@ const { Provider } = require('react-redux')
 // reducer(s) from ./ch14/redux-netflix/src/modules/index.js
 // and returns the Store object.
 const { createStore } = require('redux')
+
+/* Imports (combined) reducers from ./modules (./modules/index.js) */
 const reducers = require('./modules')
 const routes = require('./routes.js')
 

@@ -1,19 +1,26 @@
 const React = require('react')
+
 const { connect } = require('react-redux')
+
 const { Link } = require('react-router')
+
 const {
   fetchMovieActionCreator
 } = require('modules/movies.js')
+
+// Imports a CSS file...
 const styles = require('./movie.css')
 
 class Movie extends React.Component {
+
   componentWillMount() {
-    this.props.fetchMovie(this.props.params.id)
+    this.props.leFetchMovieActionCreator(this.props.params.id)
   }
 
+  // Dispatches only when the URL param changes...
   componentWillUpdate(next) {
     if (this.props.params.id !== next.params.id) {
-      this.props.fetchMovie(next.params.id)
+      this.props.leFetchMovieActionCreator(next.params.id)
     }
   }
 
@@ -24,6 +31,7 @@ class Movie extends React.Component {
       }
     } = this.props
 
+	// Applies styles to elements inline...
     return (
       <div
         className={styles.movie}
@@ -54,8 +62,10 @@ class Movie extends React.Component {
   }
 }
 
+// Maps the data from the reducer to
+// the property...
 module.exports = connect(({movies}) => ({
   movie: movies.current
 }), {
-  fetchMovie: fetchMovieActionCreator
+  leFetchMovieActionCreator: fetchMovieActionCreator
 })(Movie)
