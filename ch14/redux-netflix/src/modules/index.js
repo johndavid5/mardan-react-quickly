@@ -9,8 +9,6 @@ const { combineReducers } = require('redux')
 //  reducer: movies
 //} = require('./movies')
 
-console.log("Let off some destructuring assignments, Bennett...!");
-
 // In English, this is...
 const movies = require('./movies').reducer; 
 

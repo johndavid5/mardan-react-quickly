@@ -1,3 +1,5 @@
+// movies reducer -- use redux-actions to
+// avoid the use of switch/case...
 const { handleActions } = require('redux-actions')
 
 const FETCH_MOVIES = 'movies/FETCH_MOVIES'

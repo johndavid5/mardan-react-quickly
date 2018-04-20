@@ -91,6 +91,7 @@ class Movies extends React.Component {
 // by creating a simple "mapper" function.  Some folks
 // would use an explicitly declared function
 // mapStateToProps(), but that would be too
+// easy to understand...
 //
 // Supply an anonymous "mapper" arrow function to connect()...
 //
