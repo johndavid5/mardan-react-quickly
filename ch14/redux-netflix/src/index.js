@@ -31,7 +31,8 @@ const { Provider } = require('react-redux')
 const { createStore } = require('redux')
 
 /* Imports (combined) reducers from ./modules (./modules/index.js) */
-const reducers = require('./modules')
+//const reducers = require('./modules')
+const reducers = require('./reducers')
 const routes = require('./routes.js')
 
 console.log("Let off some steam, Bennett!");

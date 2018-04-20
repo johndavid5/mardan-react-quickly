@@ -5,7 +5,7 @@
   "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-all": "concurrently \"webpack --watch --config webpack.config.js\" \"webpack-dev-server\"",
+    "all": "concurrently \"webpack --watch --config webpack.config.js\" \"webpack-dev-server\"",
     "webpack": "webpack --watch --config webpack.config.js",
     "dev-server": "webpack-dev-server" 
   },

@@ -11,9 +11,13 @@ const { Link } = require('react-router')
 // into movies...
 const movies = require('../../movies.json')
 
+//const {
+//  fetchMoviesActionCreator
+//} = require('modules/movies.js')
+//
 const {
   fetchMoviesActionCreator
-} = require('modules/movies.js')
+} = require('reducers/movies-reducer.js')
 
 const styles = require('./movies.css')
 

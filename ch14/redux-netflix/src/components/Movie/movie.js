@@ -4,9 +4,14 @@ const { connect } = require('react-redux')
 
 const { Link } = require('react-router')
 
+//const {
+//  fetchMovieActionCreator
+//} = require('modules/movies.js')
+//
+
 const {
   fetchMovieActionCreator
-} = require('modules/movies.js')
+} = require('reducers/movies-reducer.js')
 
 // Imports a CSS file...
 const styles = require('./movie.css')
@@ -25,6 +30,10 @@ class Movie extends React.Component {
   }
 
   render() {
+
+    const sWho = "Movie::render";
+    console.log(`${sWho}(): this.props = `, this.props );
+
     const {
       movie = {
         starring: []
@@ -62,10 +71,34 @@ class Movie extends React.Component {
   }
 }
 
+// In case we want it in English...
+// See https://www.sohamkamani.com/blog/2017/03/31/react-redux-connect-explained/
+const mapStateToProps = state => {
+
+  const sWho = "mapStateToProps";
+
+  console.log(`${sWho}(): state=`, state);
+
+  let map_out = {
+    movie: state.movies.current
+  }
+
+  console.log(`${sWho}(): Moe, retoynin' map_out=`, map_out );
+
+  return map_out;
+}
+
 // Maps the data from the reducer to
 // the property...
-module.exports = connect(({movies}) => ({
-  movie: movies.current
-}), {
-  leFetchMovieActionCreator: fetchMovieActionCreator
+//module.exports = connect(({movies}) => ({
+//  movie: movies.current
+//}), {
+//  leFetchMovieActionCreator: fetchMovieActionCreator
+//})(Movie)
+
+// Or, in English...
+module.exports = connect(
+    mapStateToProps,
+    {
+    leFetchMovieActionCreator: fetchMovieActionCreator
 })(Movie)

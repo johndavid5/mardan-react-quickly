@@ -10,7 +10,7 @@ const { combineReducers } = require('redux')
 //} = require('./movies')
 
 // In English, this is...
-const movies = require('./movies').reducer; 
+const movies = require('./movies-reducer').reducer; 
 
 module.exports = combineReducers({
   movies
